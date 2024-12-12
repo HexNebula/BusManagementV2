@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: bus-information-service
+  datasource:
+    url: jdbc:postgresql://localhost:5432/bus_management_db
+    username: user_si
+    password: 1999
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+  instance:
+    lease-renewal-interval-in-seconds: 30
+    lease-expiration-duration-in-seconds: 90
+
+server:
+  port: 8083

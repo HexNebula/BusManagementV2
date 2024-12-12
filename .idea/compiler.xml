@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <excludeFromCompile>
+      <directory url="file://$PROJECT_DIR$/service-registry-/src/main/resources/archetype-resources" includeSubdirectories="true" />
+    </excludeFromCompile>
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="location-service" />
+        <module name="reservation-service" />
+        <module name="api-gateway" />
+        <module name="frontend-service" />
+        <module name="service-registry" />
+        <module name="notification-service" />
+        <module name="reservation-viewer-service" />
+      </profile>
+      <profile name="Annotation profile for bus-information-service" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.36/lombok-1.18.36.jar" />
+        </processorPath>
+        <module name="bus-information-service" />
+      </profile>
+      <profile name="Annotation profile for authentification-service" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/unknown/lombok-unknown.jar" />
+        </processorPath>
+        <module name="authentification-service" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="geo-coder-service" target="17" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="api-gateway" options="-parameters" />
+      <module name="authentification-service" options="-parameters" />
+      <module name="bus-information-service" options="-parameters" />
+      <module name="frontend-service" options="-parameters" />
+      <module name="geo-coder-service" options="-parameters" />
+      <module name="location-service" options="-parameters" />
+      <module name="notification-service" options="-parameters" />
+      <module name="reservation-service" options="-parameters" />
+      <module name="reservation-viewer-service" options="-parameters" />
+      <module name="service-registry" options="-parameters" />
+    </option>
+  </component>
+</project>
