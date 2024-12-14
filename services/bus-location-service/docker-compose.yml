@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  redis:
+    image: redis:latest
+    container_name: redis-container
+    ports:
+      - "6379:6379" # Map Redis port to the host
+    networks:
+      - bus-network
+    command: redis-server --appendonly yes # Enable persistent storage for Redis data
+
+  bus-location-service:
+    build:
+      context: .
+    container_name: bus-location-service
+    ports:
+      - "4000:3000" #  Map container's port 3000 to host's port 4000
+    depends_on:
+      - redis
+    environment:
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+    networks:
+      - bus-network
+    volumes:
+      - .:/app
+
+networks:
+  bus-network:
+    driver: bridge

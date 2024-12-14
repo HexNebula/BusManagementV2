@@ -1,0 +1,22 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/user_management
+    username: anas
+    password: madani
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+
+server:
+  port: 8070
+
+application:
+  security:
+    jwt:
+      secret-key: 9a1be63768f672a0899e0dda0a09fa9a52603c07f64216ed4a504db655b4308f
+
+eureka:
+  instance:
+    prefer-ip-address: true
