@@ -1,0 +1,6 @@
+**Publishable key**
+pk_test_51QW60NDU8k91DkHyoAKAaDpeKjtOhM74S9231bewkqauTY5pjgkmPBkdUqwmakoU1Tdj7GmHp78aBES0V7QLXvaR00ZbrqxI0D
+
+**Secret key**
+sk_test_51QW60NDU8k91DkHyQoMeAYKvpQ6uWqoPI5qPanw8Uj7klJXIOC9hEakDOqjX9SK4jFZZmuEl4Djy1a8qL2rDdpUy0003hJR6M3
+
