@@ -1,0 +1,40 @@
+#spring:
+#  datasource:
+#    url: jdbc:postgresql://localhost:5432/payment
+#    username: anas
+#    password: madani
+#    driver-class-name: org.postgresql.Driver
+#
+#  jpa:
+#    show-sql: true
+#    hibernate:
+#      ddl-auto: update
+#    database: postgresql
+#    properties:
+#      hibernate:
+#        dialect: org.hibernate.dialect.PostgreSQLDialect
+#  kafka:
+#    producer:
+#      bootstrap-servers: localhost:9092
+#      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+#      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+#      properties:
+#        string.json.type.mapping: paymentConfirmation:com.madani.ecommerce.notification.dto.PaymentNotificationRequest
+
+server:
+  port: 8090
+
+application:
+  config:
+    success-url: "http://localhost:8090/success"
+    cancel-url: "http://localhost:8090/cancel"
+
+eureka:
+  instance:
+    prefer-ip-address: true
+
+
+stripe:
+  api:
+    publishableKey: pk_test_51QW60NDU8k91DkHyoAKAaDpeKjtOhM74S9231bewkqauTY5pjgkmPBkdUqwmakoU1Tdj7GmHp78aBES0V7QLXvaR00ZbrqxI0D
+    secretKey: sk_test_51QW60NDU8k91DkHyQoMeAYKvpQ6uWqoPI5qPanw8Uj7klJXIOC9hEakDOqjX9SK4jFZZmuEl4Djy1a8qL2rDdpUy0003hJR6M3
