@@ -1,0 +1,198 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api-gateway
+  labels:
+    app: api-gateway
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: api-gateway
+  template:
+    metadata:
+      labels:
+        app: api-gateway
+    spec:
+      containers:
+        - name: api-gateway
+          image: samahmn/api-gateway:latest
+          ports:
+            - containerPort: 8080
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: authentification-service
+  labels:
+    app: authentification-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: authentification-service
+  template:
+    metadata:
+      labels:
+        app: authentification-service
+    spec:
+      containers:
+        - name: authentification-service
+          image: samahmn/authentification-service:latest
+          ports:
+            - containerPort: 8081
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bus-information-service
+  labels:
+    app: bus-information-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: bus-information-service
+  template:
+    metadata:
+      labels:
+        app: bus-information-service
+    spec:
+      containers:
+        - name: bus-information-service
+          image: samahmn/bus-information-service:latest
+          ports:
+            - containerPort: 8082
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend
+  labels:
+    app: frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: frontend
+  template:
+    metadata:
+      labels:
+        app: frontend
+    spec:
+      containers:
+        - name: frontend
+          image: samahmn/frontend:latest
+          ports:
+            - containerPort: 3000
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: location-service
+  labels:
+    app: location-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: location-service
+  template:
+    metadata:
+      labels:
+        app: location-service
+    spec:
+      containers:
+        - name: location-service
+          image: samahmn/location-service:latest
+          ports:
+            - containerPort: 8083
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: notification-service
+  labels:
+    app: notification-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: notification-service
+  template:
+    metadata:
+      labels:
+        app: notification-service
+    spec:
+      containers:
+        - name: notification-service
+          image: samahmn/notification-service:latest
+          ports:
+            - containerPort: 8084
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: reservation-service
+  labels:
+    app: reservation-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: reservation-service
+  template:
+    metadata:
+      labels:
+        app: reservation-service
+    spec:
+      containers:
+        - name: reservation-service
+          image: samahmn/reservation-service:latest
+          ports:
+            - containerPort: 8085
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: reservation-viewer-service
+  labels:
+    app: reservation-viewer-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: reservation-viewer-service
+  template:
+    metadata:
+      labels:
+        app: reservation-viewer-service
+    spec:
+      containers:
+        - name: reservation-viewer-service
+          image: samahmn/reservation-viewer-service:latest
+          ports:
+            - containerPort: 8086
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: service-registry
+  labels:
+    app: service-registry
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: service-registry
+  template:
+    metadata:
+      labels:
+        app: service-registry
+    spec:
+      containers:
+        - name: service-registry
+          image: samahmn/service-registry:latest
+          ports:
+            - containerPort: 8761
